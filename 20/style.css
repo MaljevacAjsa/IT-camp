@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  flex-direction: row;
+  height: 10vh;
+  top: 0;
+  padding: 0px 55px;
+  background-color: white;
+}
+.header h2 {
+  font-weight: 600;
+}
+.header a {
+  color: black;
+  cursor: pointer;
+}
+.main_container {
+  text-align: center;
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1506744038136-46273834b3fb);
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  height: 100vh;
+}
+.main_container h1 {
+  font-weight: 700;
+  font-size: xx-large;
+}
+.menu {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.menu a {
+  text-decoration: none;
+}
+.book_now {
+  background-color: rgb(33, 98, 196);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 7px 18px;
+  cursor: pointer;
+}
+.start_your_journey {
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 26px;
+  background-color: rgb(188, 38, 38);
+}
+.book_now:hover {
+  background-color: rgb(26, 61, 158);
+  transition: 0.2s;
+  transform: scale(0.98);
+}
+.start_your_journey:hover {
+  transition: 0.2s;
+  transform: scale(0.98);
+  background-color: rgb(145, 26, 26);
+}
+.main_container2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgb(223, 227, 235);
+  width: 100%;
+  height: 60vh;
+}
+.card {
+  height: 250px;
+  width: 350px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 0px 10px;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.card img {
+  height: 50px;
+  border-radius: 5px;
+  width: 55px;
+}
+.footer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(43, 59, 134);
+}
+.footer a {
+  color: white;
+  border-radius: 5px;
+  padding: 5px 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer a:hover {
+  background-color: rgba(255, 255, 255, 0.372);
+}
+.sub_footer1 {
+  display: flex;
+  height: 20vh;
+  width: 100%;
+  padding: 0px 20px;
+  text-align: left;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub_footer2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 15vh;
+  width: 100%;
+}
+.sub_sub_footer {
+  width: 25%;
+  height: 100px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+}
+@media (max-width: 1000px) {
+  .header {
+    flex-direction: column;
+    height: 35vh;
+    padding: 15px;
+  }
+  .menu {
+    flex-direction: column;
+    height: 18vh;
+  }
+  .start_your_journey {
+    padding: 18px 37px;
+    border-radius: 29px;
+  }
+  .book_now {
+    padding: 12px 26px;
+    border-radius: 23px;
+  }
+  .main_container2 {
+    padding: 20px 0px;
+    gap: 20px;
+    flex-direction: column;
+    height: 70vh;
+  }
+}

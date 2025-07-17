@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cetvrti cas</title>
+  </head>
+  <body>
+    <form>
+      <h1>Sign Up</h1>
+      <label for="imeprezime">Ime / Prezime</label>
+      <input
+        minlength="10"
+        required
+        placeholder="Ime i Prezime"
+        type="text"
+        id="imeprezime"
+      />
+      <br />
+      <label for="password">Password:</label>
+      <input
+        required
+        placeholder="Password"
+        minlength="8"
+        type="password"
+        id="password"
+      />
+      <br />
+      <label for="email">Email:</label>
+      <input required placeholder="Email" type="email" id="email" />
+      <br />
+      <label for="date">Datum:</label>
+      <input required placeholder="Datum rodjenja" type="date" id="date" />
+      <br />
+      <label value="musko">Musko:</label>
+      <input type="radio" name="pol" />
+      <label value="zensko">Zensko:</label>
+      <input type="radio" name="pol" />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

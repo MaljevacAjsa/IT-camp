@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  background-color: rgb(9, 18, 34);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 17px;
+  text-align: center;
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.653);
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  text-align: center;
+  width: 60px;
+}
+.logo p {
+  font-size: 13px;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  height: 30px;
+  width: 430px;
+  padding: 0px 10px;
+  background-color: rgb(18, 32, 56);
+}
+.search input {
+  background-color: rgb(18, 32, 56);
+  height: 30px;
+  border: none;
+  padding: 0px 5px;
+  width: 300px;
+}
+.search input:focus {
+  border: none;
+  color: white;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+}
+.header button {
+  color: rgb(18, 32, 56);
+  background-color: rgb(25, 158, 89);
+  border: none;
+  border-radius: 7px;
+  height: 40px;
+  cursor: pointer;
+  width: 100px;
+}
+.header button:hover {
+  background-color: rgb(19, 183, 98);
+  color: rgb(19, 37, 68);
+  transform: scale(1.01);
+  transition: 0.2s ease-in-out;
+}
+.div20 {
+  display: none;
+  background-color: rgb(157, 15, 124);
+  color: white;
+  border: 0.5px solid white;
+  border-radius: 10px;
+  padding: 3px 8px;
+}
+.bell:hover .div20 {
+  display: block;
+  position: absolute;
+  top: 0px;
+}
+.bell {
+  background-color: rgb(18, 32, 56);
+  border-radius: 15px;
+  border: none;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+}
+.grid:hover {
+  background-color: rgb(34, 56, 94);
+  transition: 0.1s ease-in-out;
+
+  cursor: pointer;
+}
+.bell:hover {
+  background-color: rgb(34, 56, 94);
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.grid {
+  background-color: rgb(18, 32, 56);
+  border-radius: 15px;
+  border: none;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+}
+.sub_menu {
+  background-color: rgb(18, 32, 56);
+  border-radius: 15px;
+  border: none;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 8px;
+  align-items: center;
+  width: 100px;
+}
+.sub_menu:hover {
+  background-color: rgb(34, 56, 94);
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+.main_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+  border: 0.1px solid rgba(255, 255, 255, 0.653);
+  gap: 20px;
+  padding: 15px 20px;
+  position: fixed;
+  left: 0;
+  top: 55px;
+}
+.new_post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  border-radius: 12px;
+  /* background-color: rgb(9, 18, 34); */
+  width: 100%;
+  height: 35px;
+  border: 1px solid white;
+}
+.new_post {
+  text-decoration: none;
+}
+.bookmarks {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+}
+.sidebar_sub_div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+}
+.bookmarks select * {
+  color: black;
+}
+.bookmarks select {
+  width: 10px;
+  display: none;
+}
+.bookmarks {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 180px;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0px;
+}
+.bookmarks:hover .book {
+  display: block;
+}
+.new_post_div:hover {
+  background-color: rgb(18, 35, 65);
+}
+.new_post_div {
+  border-radius: 12px;
+}
+.arrow:hover {
+  cursor: pointer;
+}
+.bookmarks-hovering {
+  display: flex;
+}
+.bookmarks-hovering:hover .book {
+  position: relative;
+  right: 10px;
+}
+.nav_bar {
+  width: 80%;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: aliceblue;
+}

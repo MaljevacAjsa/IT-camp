@@ -1,0 +1,225 @@
+// ---Zadaci za switch---
+
+// 1. Kalkulator
+//     Unesi dva broja i operaciju (+, -, *, /) pa pomoću switch uradi odgovarajuću operaciju i
+//     prikaži rezultat.
+// let broj1 = Number(prompt("Unesite prvi broj: "));
+// let broj2 = Number(prompt("Unesite drugi broj: "));
+// let operacija = prompt("Unesite operaciju (- + * /): ");
+// let rezultat;
+// switch (operacija) {
+//   case "+":
+//     rezultat = broj1 + broj2;
+//     break;
+//   case "-":
+//     rezultat = broj1 - broj2;
+//     break;
+//   case "*":
+//     rezultat = broj1 * broj2;
+//     break;
+//   case "/":
+//     if (broj2 === 0) {
+//       console.log("Deljenje sa nulom nije dozvoljeno.");
+//       rezultat = "Nedefinisano";
+//     } else {
+//       rezultat = broj1 / broj2;
+//     }
+//     break;
+//   default:
+//     console.log("Unesite odgovarajucu operaciju");
+// }
+// console.log(`Rezultat: ${rezultat}`);
+
+// 2. Simulacija prodavnice
+//     Korisnik bira kategoriju proizvoda ("Hrana", "Elektronika", "Odeća") pomoću switch,
+//     zatim ispisuješ nekoliko proizvoda iz te kategorije.
+
+// let izbor = prompt(`Odaberite kategoriju ("Hrana", "Elektronika", "Odeća") : `);
+
+// switch (izbor) {
+//   case "Hrana":
+//     console.log("Proizvodi: Mleko, jaja, brasno, secer");
+//     break;
+//   case "Elektronika":
+//     console.log("Proizvodi: Laptop, kuciste, tastatura, telefon");
+//     break;
+//   case "Odeca":
+//     console.log("Proizvodi: Majca, papuce, trenerka, kacket");
+//     break;
+//   default:
+//     console.log("Nepoznata kategorija.");
+// }
+
+// 3. Ocena u rečima
+//     Unesi broj ocene (1-5) i pomoću switch ispiši tekstualni opis
+//     ("Nedovoljan", "Dovoljan", "Dobar", "Vrlo dobar", "Odličan").
+
+// let ocena = prompt("Unesite ocenu (1-5) : ");
+
+// switch (ocena) {
+//   case "1":
+//     console.log("Nedovoljan");
+//     break;
+//   case "2":
+//     console.log("Dovoljan");
+//     break;
+//   case "3":
+//     console.log("Dobar");
+//     break;
+//   case "4":
+//     console.log("Vrlodobar");
+//     break;
+//   case "5":
+//     console.log("Odlican");
+//     break;
+// }
+
+// ---Zadaci za for loop---
+
+// 1. Tablica množenja
+//     Za dati broj (npr. 5), ispiši njegovu tablicu množenja do 10.
+//     5 * 1 = 5;
+//     5 * 2 = 10;
+
+// let broj = Number(prompt("Unesite broj: "));
+
+// for (let i = 1; i < 11; i++) {
+//   console.log(`${broj}*${i}=${broj * i}`);
+// }
+
+// 2. Zbir elemenata
+// Unositi brojeve 5 puta, zatim izračunati njihov zbir koristeći for petlju.
+
+// let zbir = 0;
+// for (let i = 0; i < 5; i++) {
+//   let broj = Number(prompt("Unesite broj:"));
+//   zbir += broj;
+// }
+// console.log(`Zbir: ${zbir}`);
+
+// 3. Najveći broj
+// Pronađi najveći i najmanji broj od 5 unetih brojeva.
+
+// let najveci;
+// let najmanji;
+
+// for (let i = 0; i < 5; i++) {
+//   let broj = Number(prompt("Unesite broj:"));
+//   if (i == 0) {
+//     najveci = broj;
+//     najmanji = broj;
+//   }
+//   if (broj > najveci) {
+//     najveci = broj;
+//   }
+//   if (broj < najmanji) {
+//     najmanji = broj;
+//   }
+// }
+// console.log(`Najveci: ${najveci}`);
+// console.log(`Najmanji: ${najmanji}`);
+
+// 4. Proveri da li je broj prost
+// Unesi broj i pomoću for petlje proveri da li je prost (prost broj je deljiv samo sa 1 i samim sobom).
+
+// let brojProst = Number(prompt("Unesite broj: "));
+// let prost = true;
+
+// if (brojProst < 2) {
+//   prost = false;
+// } else {
+//   for (let i = 2; i < brojProst; i++) {
+//     if (brojProst % i === 0) {
+//       prost = false;
+//       break;
+//     }
+//   }
+// }
+
+// if (prost) {
+//   console.log("Broj je prost.");
+// } else {
+//   console.log("Broj nije prost.");
+// }
+
+// 5. Faktorijel broja
+// Izračunaj faktorijel broja n (npr. 5! = 5 × 4 × 3 × 2 × 1 = 120).
+
+// let broj = Number(prompt("Unesite broj: "));
+// let faktorijel = 1;
+// for (let i = 1; i <= broj; i++) {
+//   faktorijel *= i;
+// }
+// console.log(`Faktorijel broja ${broj} : ${faktorijel}`);
+
+// 6. Suma parnih brojeva do n
+// Unesi broj n i izračunaj zbir svih parnih brojeva do n.
+
+// let broj = Number(prompt("Unesite broj: "));
+// let suma = 0;
+// for (let i = 1; i < broj; i++) {
+//   if (i % 2 === 0) {
+//     suma += i;
+//   }
+// }
+// console.log(`Suma: ${suma}`);
+
+// 7. Deljivost sa 3 i 5
+// Ispiši brojeve od 1 do 50 koji su deljivi sa 3 i/ili 5.
+
+// for (let i = 1; i <= 50; i++) {
+//   if (i % 3 == 0 || i % 5 == 0) {
+//     console.log(i);
+//   }
+// }
+
+// 8. Srednja vrednost
+// Unesi 5 brojeva i izračunaj njihovu srednju vrednost.
+
+// let suma = 0;
+// for (let i = 0; i < 5; i++) {
+//   suma += Number(prompt("Unesite broj:"));
+// }
+// let srednjaVrednost = suma / 5;
+// console.log(`Srednja vrednost: ${srednjaVrednost}`);
+
+// 9. Stepene broja 2
+// Ispiši prve 10 stepena broja 2 (2¹, 2², 2³, ...).
+
+// for (let i = 1; i <= 10; i++) {
+//   console.log(`2 na ${i} = ${Math.pow(2, i)}`);
+// }
+
+// 10. Fibonacijev niz
+// Ispiši prvih 10 brojeva Fibonacijevog niza. 1 1 2 3 5 8 13 21 34 55 ,
+// (svaki naredni broj je zbir prethodna dva)
+
+// let prethodni = 1;
+// let trenutni = 1;
+
+// console.log(prethodni);
+// console.log(trenutni);
+
+// for (let i = 3; i <= 10; i++) {
+//   let sledeci = prethodni + trenutni;
+//   console.log(sledeci);
+//   prethodni = trenutni;
+//   trenutni = sledeci;
+// }
+
+// 11. Savršen broj
+// Proveri da li je uneti broj savršen (broj čiji zbir delilaca, osim njega samog,
+// daje isti broj, npr. 6 → 1+2+3=6).
+
+// let broj = Number(prompt("Unesite broj: "));
+// let zbirDelilaca = 0;
+// for (let i = 1; i < broj; i++) {
+//   if (broj % i === 0) {
+//     zbirDelilaca += i;
+//   }
+// }
+// if (zbirDelilaca === broj) {
+//   console.log(`${broj} je savršen broj.`);
+// } else {
+//   console.log(`${broj} nije savršen broj.`);
+// }

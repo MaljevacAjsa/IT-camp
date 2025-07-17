@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(220, 234, 234);
+}
+
+* {
+  text-align: center;
+}
+
+.info {
+  background-color: rgb(176, 176, 176);
+  padding: 7px;
+  width: 540px;
+  border-radius: 5px;
+}
+
+.container {
+  background-color: white;
+  height: 280px;
+  width: 555px;
+  border-radius: 6px;
+  padding-top: 20px;
+}
+
+.poruka {
+  padding-right: 340px;
+  padding-bottom: 100px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-color: rgba(77, 77, 77, 0.413);
+}
+
+.inputi {
+  height: 30px;
+  padding-right: 340px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-color: rgba(77, 77, 77, 0.413);
+}
+
+.dugme {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 6px 10px;
+}

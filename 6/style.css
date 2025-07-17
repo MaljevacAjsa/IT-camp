@@ -1,0 +1,95 @@
+* {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: pink;
+}
+
+caption {
+  font-size: 35px;
+  color: rgb(42, 109, 25);
+  padding: 10px;
+  margin: 10px 0px;
+  font-weight: 600;
+}
+
+table,
+tr,
+td,
+th {
+  border: 3px solid pink;
+  border-collapse: collapse;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+/* table,
+td,
+th {
+  border-spacing: 30px;
+} */
+
+th {
+  border-radius: 10px;
+  background-color: rgb(81, 153, 98);
+}
+
+th:hover {
+  background-color: rgb(74, 145, 90);
+}
+
+td:hover {
+  border-radius: 10px;
+  transform: scale(1.1);
+  border-radius: 5px;
+  color: rgb(255, 212, 212);
+}
+
+li:nth-child(odd) {
+  background-color: cadetblue;
+}
+li {
+  font-size: 25px;
+  width: 200px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  padding: 10px;
+}
+li:hover {
+  cursor: pointer;
+  border-radius: 10px;
+  transform: scale(1.06);
+  border-radius: 10px;
+}
+li:nth-child(even) {
+  background-color: rgb(159, 95, 160);
+}
+
+tr:nth-child(even) {
+  background-color: rgb(196, 69, 69);
+}
+tr:nth-child(odd) {
+  background-color: rgb(165, 49, 49);
+}
+
+a:hover {
+  color: red;
+}
+
+input:focus {
+  border-color: blue;
+  outline: none;
+}
+
+p {
+  color: blue;
+  font-size: 16px;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+}

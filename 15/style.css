@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.a_link:link {
+  color: red;
+}
+.a_link:visited {
+  color: rgb(125, 7, 119);
+}
+.a_link:active {
+  color: rgb(28, 211, 55);
+}
+.a_link:hover {
+  color: rgb(0, 229, 255);
+}
+.a_link::before {
+  content: "before";
+}
+.a_link::after {
+  content: "after";
+}
+.overflowtest {
+  height: 250px;
+  width: 200px;
+  overflow: auto;
+  background-color: rgb(193, 84, 121);
+  color: white;
+  border-radius: 15px;
+  padding: 15px 10px;
+}
+
+.hello {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  width: 300px;
+  box-shadow: 1px 9px 7px 5px rgba(119, 115, 115, 0.429);
+  padding: 10px;
+}
+
+.pseudo_classes:hover .hello {
+  display: flex;
+}
+
+.pseudo_classes {
+  height: 30px;
+  width: 300px;
+}
+
+.nums_div > p {
+  background-color: aquamarine;
+}

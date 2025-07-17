@@ -1,0 +1,89 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  color: white;
+  display: flex;
+  background-color: rgb(75, 75, 75);
+  align-items: center;
+  height: 60px;
+  padding: 30px;
+  justify-content: space-between;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+}
+.menu a {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+.menu a:hover {
+  background-color: rgba(131, 131, 131, 0.416);
+}
+.page1 {
+  background-color: rgb(201, 209, 212);
+  text-align: center;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.page1 p {
+  font-size: 20px;
+  margin-top: 7px;
+}
+
+.cards {
+  background-color: rgb(223, 228, 230);
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  height: 280px;
+  padding: 0px 280px;
+}
+.card {
+  height: 180px;
+  background-color: white;
+  width: 300px;
+  padding: 25px 30px;
+  border-radius: 10px;
+  display: inline;
+  text-align: center;
+  box-shadow: 0px 4px 5px rgba(128, 128, 128, 0.342);
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 4px 5px rgba(111, 111, 111, 0.671);
+  transition: ease-in;
+}
+.card button {
+  background-color: rgb(29, 91, 161);
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 5px;
+}
+.card button:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 5px rgba(107, 107, 107, 0.612);
+  background-color: rgb(19, 71, 131);
+}
+.card * {
+  margin: 5px;
+}
+.footer {
+  background-color: rgb(75, 75, 75);
+  color: white;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;
+}

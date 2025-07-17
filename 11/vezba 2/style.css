@@ -1,0 +1,143 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(154, 149, 255);
+  padding: 40px;
+}
+.main_container {
+  height: 600px;
+  border-radius: 20px;
+  background-color: rgb(22, 7, 97);
+  width: 1000px;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.523);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  height: 30px;
+}
+.left_container {
+  width: 50%;
+  border-radius: 16px;
+  color: white;
+  background-image: url(images/Longing.jpg);
+  background-repeat: no-repeat;
+  background-size: 35% 90%;
+  background-attachment: fixed;
+  padding: 10px 25px;
+  height: 97%;
+  display: flex;
+  margin-left: 8px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footing {
+  display: flex;
+  height: 120px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.footing h2 {
+  padding: 5px 0px;
+}
+.footing p {
+  margin: 5px 0px;
+}
+.right_container {
+  width: 50%;
+  border-radius: 16px;
+  padding: 50px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(22, 7, 97);
+  gap: 20px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.small_input,
+.big_input {
+  color: white;
+  border-radius: 5px;
+  background-color: rgb(40, 27, 103);
+  border: none;
+  padding: 10px;
+  margin: 8px 4px;
+  height: 45px;
+}
+.small_input {
+  width: 185px;
+}
+.big_input {
+  width: 380px;
+}
+input:focus {
+  border: white;
+}
+.label_div {
+  font-size: 13px;
+}
+.words {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.words p {
+  color: rgba(255, 255, 255, 0.582);
+}
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  width: 110px;
+  align-items: center;
+}
+.create_account {
+  background-color: rgb(89, 26, 198);
+  border-radius: 7px;
+  cursor: pointer;
+  height: 47px;
+  width: 380px;
+  color: white;
+  border: none;
+}
+.create_account:hover {
+  background-color: rgb(105, 38, 221);
+  transform: scale(1.01);
+  transition: 0.2s;
+  box-shadow: 4px 4px 5px rgb(0, 0, 0);
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 93%;
+}
+.links a {
+  border: 0.1px solid rgba(255, 255, 255, 0.502);
+  border-radius: 4px;
+  padding: 8px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signups {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

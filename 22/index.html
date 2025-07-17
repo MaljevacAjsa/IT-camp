@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        height: 250px;
+        width: 250px;
+        background-color: palevioletred;
+        color: white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .box:hover {
+        animation-name: box_animation;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        transform: 2s ease-in-out 3s;
+        animation-play-state: running;
+        transition: transform 2s ease-in-out;
+        animation-direction: alternate;
+      }
+      @keyframes box_animation {
+        0% {
+          scale: 1.4;
+          transform: rotate(180deg);
+          border-radius: 25% 25% 25% 25%;
+        }
+        50% {
+          scale: 1;
+          transform: rotate(0deg);
+          border-radius: 0 0 0 0;
+        }
+        100% {
+          scale: 1.7;
+          transform: rotate(260deg);
+          border-radius: 50% 50% 50% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"><p>Animirana kutija</p></div>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(images/Screenshot\ 2025-03-28\ 172501.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 190px;
+  padding: 10px;
+  text-align: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  color: white;
+  position: sticky;
+  top: 0;
+  background-color: rgb(12, 21, 34);
+  padding: 10px 15px;
+  border: 1px solid white;
+  border-radius: 20px;
+  z-index: 1000;
+}
+.header a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+}
+.menu {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.biography {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 60px;
+  width: 60%;
+}
+.main_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 400px;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+.about_me {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  width: 85%;
+}
+.contact {
+  gap: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+  border: 3px solid white;
+  border-radius: 15px;
+  padding: 40px 0px;
+}
+.contact_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  text-align: center;
+  flex-direction: column;
+}
+.contact_info a {
+  color: white;
+  text-decoration: none;
+}
+.spec_h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.spec_h1 a {
+  font-size: 90px;
+  font-weight: 600;
+  color: aliceblue;
+  line-height: 88px;
+  cursor: pointer;
+  font-family: "Anton", sans-serif;
+}
+.spec_h1 a:hover {
+  transform: scale(1.07);
+  color: white;
+  transition: 0.2s ease-out;
+}
+.outer_contact {
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 50px;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

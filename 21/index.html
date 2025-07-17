@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        border-radius: 20px;
+        width: 400px;
+        transition: transform 2s cubic-bezier(1, -0.01, 0, 0.91);
+        transform: 2s ease-in 2s, background-color 4s;
+        height: 400px;
+        background-color: palevioletred;
+      }
+      .child {
+        font-size: small;
+        width: 50%;
+        height: 50%;
+        border-radius: 20px;
+        background-color: pink;
+        transition: transform 2s cubic-bezier(1, -0.01, 0, 0.91);
+        transform: 2s ease-in 2s, background-color 4s;
+      }
+      .parent:hover .child {
+        font-size: xx-large;
+        transform: translateX(100%);
+        background-color: aliceblue;
+        transition: background-color 1s, transform 1s;
+      }
+      .parent:hover {
+        background-color: rgb(185, 222, 223);
+        transition: background-color 1s, transform 1s;
+      }
+      .child:hover .parent {
+        background-color: rgb(20, 103, 152);
+        transition: background-color 1s, transform 1s;
+      }
+      @keyframes ajsa_roza {
+        0% {
+          border-radius: 0 0 0 0;
+          transform: scale(0.95);
+          background-color: rgb(255, 231, 246);
+        }
+        25% {
+          border-radius: 50% 30% 30% 35%;
+          transform: scale(0.75);
+          background-color: rgb(255, 207, 237);
+        }
+        50% {
+          border-radius: 50% 50% 35% 40%;
+          transform: scale(0.55);
+          background-color: rgb(255, 193, 231);
+        }
+        75% {
+          border-radius: 50% 50% 40% 45%;
+          transform: scale(0.35);
+          background-color: rgb(255, 175, 224);
+        }
+        100% {
+          border-radius: 50% 50% 50% 50%;
+          transform: scale(0.15);
+          background-color: rgb(255, 137, 210);
+        }
+      }
+      @keyframes ajsa {
+        0% {
+          border-radius: 0 0 0 0;
+          transform: scale(0.95);
+          background-color: rgb(231, 244, 255);
+        }
+        25% {
+          border-radius: 50% 30% 30% 35%;
+          transform: scale(0.75);
+          background-color: rgb(218, 238, 255);
+        }
+        50% {
+          border-radius: 50% 50% 35% 40%;
+          transform: scale(0.55);
+          background-color: rgb(198, 229, 255);
+        }
+        75% {
+          border-radius: 50% 50% 40% 45%;
+          transform: scale(0.35);
+          background-color: rgb(174, 218, 255);
+        }
+        100% {
+          border-radius: 50% 50% 50% 50%;
+          transform: scale(0.15);
+          background-color: rgb(150, 208, 254);
+        }
+      }
+      .treci {
+        background-color: white;
+        animation: ajsa 1s;
+        border-radius: 10%;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+        width: 400px;
+        height: 400px;
+      }
+      .treci:hover {
+        transform: scale(0.95);
+        animation: ajsa_roza infinite 4s alternate-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent"><div class="child"></div></div>
+    <div class="treci"></div>
+  </body>
+</html>

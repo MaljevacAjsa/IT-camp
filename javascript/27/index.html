@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registracija</title>
+  </head>
+  <body>
+    <input type="text" id="search" placeholder="Pretraga" />
+    <input type="text" id="myInput" />
+
+    <script>
+      //       const fn =()=>{}
+
+      document.getElementById("search").addEventListener("input", function () {
+        // this ne radi sa arrow funkcijama nego obicnim
+        console.log("Input event:", this.value);
+      });
+      document
+        .getElementById("myInput")
+        .addEventListener("change", function () {
+          console.log("Change event:", this.value);
+          if (!this.value.includes("@")) {
+            alert("Molimo unesite validnu email adresu");
+          }
+        });
+    </script>
+  </body>
+</html>

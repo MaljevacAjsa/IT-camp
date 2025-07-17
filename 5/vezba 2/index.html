@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Interaktivna Tabela</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Interaktivna Tabela</h1>
+      <input type="text" id="searchInput" placeholder="Pretraži ime..." />
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">Ime</th>
+            <th onclick="sortTable(1)">Prezime</th>
+            <th onclick="sortTable(2)">Godine</th>
+            <th onclick="sortTable(3)">Pol</th>
+            <th onclick="sortTable(4)">Grad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ajsa</td>
+            <td>Maljevac</td>
+            <td>19</td>
+            <td>Žensko</td>
+            <td>Novi Pazar</td>
+          </tr>
+          <tr>
+            <td>Saladin</td>
+            <td>Hodzic</td>
+            <td>19</td>
+            <td>Musko</td>
+            <td>Novi Pazar</td>
+          </tr>
+          <tr>
+            <td>Tedi</td>
+            <td>Maljevac</td>
+            <td>3</td>
+            <td>Dečkić</td>
+            <td>Novi Pazar</td>
+          </tr>
+          <tr>
+            <td>Ajla</td>
+            <td>Maljevac</td>
+            <td>18</td>
+            <td>Žensko</td>
+            <td>Novi Pazar</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Dodaj Osobu</h2>
+      <form id="addForm">
+        <input type="text" id="name" placeholder="Ime" required />
+        <input type="text" id="surname" placeholder="Prezime" required />
+        <input type="number" id="age" placeholder="Godine" required />
+        <select id="gender">
+          <option value="Žensko">Žensko</option>
+          <option value="Muško">Muško</option>
+          <option value="Muško">Dečkić</option>
+          <option value="Muško">Beba</option>
+        </select>
+        <input type="text" id="city" placeholder="Grad" required />
+        <button type="submit">Dodaj</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

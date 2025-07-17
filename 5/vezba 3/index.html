@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Napredna Dinamička Tabela</title>
+    <style>
+      * {
+        border-radius: 5px;
+      }
+      h2 {
+        color: rgb(230, 138, 169);
+      }
+      input {
+        height: 32px;
+        width: 250px;
+        border: 1px solid rgba(206, 80, 122, 0.491);
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #ffffff;
+        text-align: center;
+      }
+      nav {
+        background-color: rgb(230, 138, 169);
+        padding: 10px;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: rgb(230, 138, 169);
+
+        color: white;
+        cursor: pointer;
+      }
+      button {
+        padding: 10px;
+        border: 1px solid rgb(230, 138, 169);
+        background-color: rgb(230, 138, 169);
+
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(200, 88, 125);
+        transform: scale(1.01);
+      }
+      .delete-btn {
+        background-color: rgb(230, 138, 169);
+        color: white;
+        border-radius: 5px;
+      }
+      .image-container {
+        margin: 20px;
+      }
+      .image-container img {
+        width: 150px;
+        height: auto;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(172, 56, 169, 0.365);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#">Početna</a>
+      <a href="#">Tabela</a>
+      <a href="#">API Podaci</a>
+    </nav>
+
+    <h2>Napredna Dinamička Tabela</h2>
+    <div class="image-container">
+      <img src="download (20).jpg" alt="Slika 1" />
+      <img src="download (21).jpg" alt="Slika 2" />
+      <img src="download (20).jpg" alt="Slika 3" />
+    </div>
+
+    <form id="dataForm">
+      <input type="text" id="name" placeholder="Ime" required />
+      <input type="text" id="age" placeholder="Prezime" required />
+      <button type="submit">Dodaj</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Ime</th>
+          <th onclick="sortTable(1)">Prezime</th>
+          <th>Akcija</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+      document
+        .getElementById("dataForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let name = document.getElementById("name").value;
+          let age = document.getElementById("age").value;
+          let tableBody = document.getElementById("tableBody");
+          let row = document.createElement("tr");
+          row.innerHTML = `<td>${name}</td><td>${age}</td><td><button class='delete-btn' onclick='deleteRow(this)'>Obriši</button></td>`;
+          tableBody.appendChild(row);
+          document.getElementById("dataForm").reset();
+        });
+      function deleteRow(button) {
+        button.parentElement.parentElement.remove();
+      }
+      function sortTable(columnIndex) {
+        let table = document.querySelector("table tbody");
+        let rows = Array.from(table.rows);
+        rows.sort((rowA, rowB) =>
+          rowA.cells[columnIndex].innerText.localeCompare(
+            rowB.cells[columnIndex].innerText
+          )
+        );
+        table.innerHTML = "";
+        rows.forEach((row) => table.appendChild(row));
+      }
+    </script>
+  </body>
+</html>

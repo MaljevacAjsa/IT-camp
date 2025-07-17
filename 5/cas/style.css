@@ -1,0 +1,49 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 7px;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(230, 168, 176);
+}
+
+th,
+tr,
+td {
+  border: 1px solid rgb(183, 101, 115);
+  background-color: rgb(199, 93, 111);
+  height: 20px;
+  padding: 15px 50px;
+  width: 35px;
+  border-collapse: collapse;
+  cursor: pointer;
+}
+
+th {
+  background-color: rgb(182, 70, 89);
+}
+
+th:hover {
+  background-color: rgb(157, 53, 70);
+  scale: 1.02;
+  transition: ease-in;
+}
+
+td:hover {
+  background-color: rgb(183, 74, 92);
+  scale: 1.018;
+  transition: ease-in;
+}
+
+table {
+  background-color: rgb(255, 254, 254);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
