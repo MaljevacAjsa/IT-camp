@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brojač klikova</title>
+  </head>
+  <body>
+    <div class="task">
+      <button id="btnBrojac">Klikni me</button>
+      <p>Broj klikova: <span id="brojKlikova">0</span></p>
+    </div>
+
+    <script>
+      const btnBrojac = document.getElementById("btnBrojac");
+      const brojKlikova = document.getElementById("brojKlikova");
+
+      let brojac = 0;
+
+      function povecajFn() {
+        brojac++;
+        brojKlikova.textContent = brojac;
+      }
+
+      btnBrojac.addEventListener("click", povecajFn);
+
+      btnBrojac.addEventListener("click", () => {
+        console.log("Click iz anonimne funkcije");
+      });
+
+      // removeEventListener uklanja odredjenu fju za odredjeni event
+      // setTimeout izvrsava funkciju(prvi argument) nakon nekoliko milisekundi(drugi argument)
+
+      // Ovde nakon 5 sekundi brišemo oba listenera
+      setTimeout(() => {
+        // Ovaj radi jer referencira ISTU funkciju povecajFn
+        btnBrojac.removeEventListener("click", povecajFn);
+
+        // Ovaj NE RADI jer je arrow funkcija nova instanca
+        btnBrojac.removeEventListener("click", () => {
+          console.log("CLICK");
+        });
+        // Ispravno bi bilo da arrow funkciju definišemo van i da je prosledimo kao sto smo uradili i sa povecajFn
+      }, 5000);
+
+      // Kako setTimeout radi:
+      // posto se js izvrsava line by line at a time, kada naidje na setTimeout on 'zakaze' izvrsavanje
+      // te funkcije nakon nekoliko ms, a nastavi sa izvrsavanjem preostalog koda, dakle setTimeout ne blokira ostatak koda od izvrsenja
+
+      setTimeout(() => {
+        console.log("SetTimeout");
+      }, 3000);
+      console.log("Console.log posle Settimeout-a");
+
+      // ispis u konzoli bi izgledao ovako:
+      // Console.log posle Settimeout-a
+      // SetTimeout (nakon 3 sekunde)
+
+      // Date je ugrađeni JavaScript objekat koji predstavlja tačan trenutak u vremenu
+      // i omogućava rad sa datumima i vremenom
+
+      // Kreiramo novi objekat Date koji predstavlja trenutni datum i vreme
+      const trenutnoVreme = new Date();
+      const vremeRn = new Date();
+      // Trenutni datum i vreme u standardnom formatu (ISO string)
+      console.log("Trenutni datum i vreme:", trenutnoVreme);
+
+      // getDay() vraća DAN U NEDELJI (0 = nedelja, 1 = ponedeljak, ..., 6 = subota)
+      console.log("Dan u nedelji (1-7):", trenutnoVreme.getDay());
+      const danasnjiDan = vremeRn.getDay();
+
+      // getMonth() vraća MESEC (0 = januar, 1 = februar, ..., 11 = decembar)
+      console.log("Mesec (0-11):", trenutnoVreme.getMonth());
+      const trenutniMesec = vremeRn.getMonth();
+
+      // getFullYear() vraća CELOKUPNU godinu (npr. 2025)
+      console.log("Godina:", trenutnoVreme.getFullYear());
+      const trenutnaGodina = vremeRn.getFullYear();
+
+      // Kreiramo novi datum za tačno definisan trenutak
+      // Format: new Date("YYYY-MM-DDTHH:MM:SS")
+      // T koristimo kao separator izmedju datuma i vremena
+      const specificanDatum = new Date("2025-07-14T14:00:03");
+      console.log("Specifičan datum:", specificanDatum);
+      const specDate = new Date("2005-03-19T03:40:00");
+      console.log("datum", vremeRn.toDateString());
+      console.log("vreme", vremeRn.toTimeString());
+      // toDateString()	Vraća samo deo datuma kao čitljiv string
+      // toTimeString()	Vraća samo deo vremena kao čitljiv string
+    </script>
+  </body>
+</html>
