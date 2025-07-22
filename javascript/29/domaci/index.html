@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #f7f9fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-weight: 500;
+        color: #444;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 0.6rem;
+        margin-bottom: 0.2rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      .error-text {
+        font-size: 0.85rem;
+        color: red;
+        margin-bottom: 0.8rem;
+        min-height: 1rem;
+      }
+
+      .checkbox-label {
+        display: flex;
+        align-items: center;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+
+      button {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #024fa2;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .welcome {
+        text-align: center;
+        font-size: 1.3rem;
+        color: #2e7d32;
+      }
+
+      .logout-btn {
+        margin-top: 1.5rem;
+        background-color: #dc3545;
+      }
+
+      .logout-btn:hover {
+        background-color: #9d1825;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="formContainer">
+      <h2>Registracija</h2>
+      <form id="loginForm" novalidate>
+        <label for="email">Email adresa</label>
+        <input type="email" id="email" />
+        <div class="error-text" id="emailError"></div>
+
+        <label for="password">Lozinka</label>
+        <input type="password" id="password" />
+        <div class="error-text" id="passwordError"></div>
+
+        <label for="confirmPassword">Potvrdi lozinku</label>
+        <input type="password" id="confirmPassword" />
+        <div class="error-text" id="confirmPasswordError"></div>
+
+        <label for="dob">Datum rođenja</label>
+        <input type="date" id="dob" />
+        <div class="error-text" id="dobError"></div>
+
+        <label for="gender">Pol</label>
+        <select id="gender">
+          <option value="">Izaberi</option>
+          <option value="muški">Muški</option>
+          <option value="ženski">Ženski</option>
+          <option value="drugo">Drugo</option>
+        </select>
+        <div class="error-text" id="genderError"></div>
+
+        <div class="checkbox-label">
+          <label for="terms">Prihvatam uslove korišćenja</label>
+          <input type="checkbox" id="terms" />
+        </div>
+        <div class="error-text" id="termsError"></div>
+
+        <button type="submit">Prijavi se</button>
+      </form>
+    </div>
+
+    <div class="container" id="welcomeContainer" style="display: none">
+      <div class="welcome" id="welcomeMessage"></div>
+      <button class="logout-btn" onclick="logout()">Odjavi se</button>
+    </div>
+
+    <script>
+      const form = document.getElementById("loginForm");
+
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirmPassword");
+      const dob = document.getElementById("dob");
+      const gender = document.getElementById("gender");
+      const terms = document.getElementById("terms");
+
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+      const confirmPasswordError = document.getElementById(
+        "confirmPasswordError"
+      );
+      const dobError = document.getElementById("dobError");
+      const genderError = document.getElementById("genderError");
+      const termsError = document.getElementById("termsError");
+
+      const formContainer = document.getElementById("formContainer");
+      const welcomeContainer = document.getElementById("welcomeContainer");
+      const welcomeMessage = document.getElementById("welcomeMessage");
+
+      function validateEmail() {
+        const value = email.value.trim();
+        const valid = value.includes("@");
+        emailError.textContent = valid ? "" : "Unesite validan email.";
+        console.log(valid);
+        return valid;
+      }
+
+      function validatePassword() {
+        const value = password.value.trim();
+        const valid = value.length >= 6;
+        passwordError.textContent = valid
+          ? ""
+          : "Lozinka mora imati bar 6 karaktera.";
+        console.log(valid);
+        return valid;
+      }
+
+      function validateConfirmPassword() {
+        const valid = password.value === confirmPassword.value;
+        confirmPasswordError.textContent = valid
+          ? ""
+          : "Lozinke se ne poklapaju.";
+        console.log(valid);
+        return valid;
+      }
+
+      function validateDob() {
+        const valid = dob.value !== "";
+        dobError.textContent = valid ? "" : "Unesite datum rođenja.";
+        return valid;
+      }
+
+      function validateGender() {
+        const valid = gender.value !== "";
+        genderError.textContent = valid ? "" : "Izaberite pol.";
+        console.log(valid);
+        return valid;
+      }
+
+      function validateTerms() {
+        const valid = terms.checked;
+        termsError.textContent = valid ? "" : "Morate prihvatiti uslove.";
+        console.log(valid);
+        return valid;
+      }
+
+      function showWelcome(userEmail) {
+        formContainer.style.display = "none";
+        welcomeContainer.style.display = "block";
+        welcomeMessage.textContent = `Ćao, ${userEmail}! Dobrodošao nazad.`;
+      }
+
+      function logout() {
+        localStorage.removeItem("userEmail");
+        location.reload();
+      }
+
+      window.addEventListener("load", () => {
+        const savedEmail = localStorage.getItem("userEmail");
+        if (savedEmail) {
+          showWelcome(savedEmail);
+        }
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const valid =
+          validateEmail() &
+          validatePassword() &
+          validateConfirmPassword() &
+          validateDob() &
+          validateGender() &
+          validateTerms();
+        console.log(valid);
+
+        if (valid) {
+          localStorage.setItem("userEmail", email.value.trim());
+          showWelcome(email.value.trim());
+        }
+      });
+
+      email.addEventListener("input", validateEmail);
+      password.addEventListener("input", validatePassword);
+      confirmPassword.addEventListener("input", validateConfirmPassword);
+      dob.addEventListener("input", validateDob);
+      gender.addEventListener("change", validateGender);
+      terms.addEventListener("change", validateTerms);
+    </script>
+  </body>
+</html>

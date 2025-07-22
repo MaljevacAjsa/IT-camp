@@ -89,21 +89,18 @@
     <script>
       const form = document.getElementById("registerForm");
       const users = [];
-
       function showError(inputId, message) {
         const errorElement = document.getElementById(`${inputId}-error`);
         errorElement.textContent = message;
         errorElement.style.display = "block";
         document.getElementById(inputId).style.border = "2px solid red";
       }
-
       function clearError(inputId) {
         const errorElement = document.getElementById(`${inputId}-error`);
         errorElement.textContent = "";
         errorElement.style.display = "none";
         document.getElementById(inputId).style.border = "2px solid green";
       }
-
       function addInputListeners() {
         const fields = [
           "ime",
@@ -117,37 +114,30 @@
           const input = document.getElementById(field);
           input.addEventListener("input", () => {
             const value = input.value.trim();
-
             if (field === "ime" || field === "prezime") {
               if (value.length >= 3) clearError(field);
             }
-
             if (field === "email") {
               if (value.includes("@") && value.length >= 5) clearError(field);
             }
-
             if (field === "password") {
               if (value.length >= 6) clearError(field);
             }
-
             if (field === "confirmPassword") {
               const password = document.getElementById("password").value;
               if (value === password) clearError(field);
             }
-
             if (field === "dob" && value !== "") {
               clearError(field);
             }
           });
         });
-
         const genderInputs = form.querySelectorAll('input[name="gender"]');
         genderInputs.forEach((input) => {
           input.addEventListener("change", () => {
             document.getElementById("gender-error").style.display = "none";
           });
         });
-
         const termsCheckbox = document.getElementById("terms");
         termsCheckbox.addEventListener("change", () => {
           if (termsCheckbox.checked) {
