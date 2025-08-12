@@ -9,7 +9,8 @@ localStorage.setItem("name", "ajla"); //menjamo vrednost kljuca
 console.log(localStorage.getItem("name")); //vraca vrednost
 
 localStorage.removeItem("name");
-//localStorage.clear(); // prazni ceo local storage
+//localStorage.clear();
+// prazni ceo local storage
 
 // SESSION STORAGE
 

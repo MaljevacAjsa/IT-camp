@@ -32,3 +32,13 @@ if (localStorage.getItem("theme") == "dark") {
 // JSON.stringify(user) da saljemo u localStorage kao string
 
 // JSON.parse(user) da uzmemo iz localStorage da koristimo
+
+//       window.addEventListener("load", () => {
+//         const savedEmail = localStorage.getItem("userEmail");
+//         if (savedEmail) {
+//           showWelcome(savedEmail);
+//         }
+//       });
+//
+
+//
