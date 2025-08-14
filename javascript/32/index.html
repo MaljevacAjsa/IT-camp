@@ -30,6 +30,15 @@
           return processRequest(response);
         })
         .catch((res) => console.log(res));
+
+      async function doWork(params) {
+        try {
+          const res = await processRequest("sh");
+          console.log(res);
+        } catch (e) {
+          console.log(e);
+        }
+      }
     </script>
   </body>
 </html>
