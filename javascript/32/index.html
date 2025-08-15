@@ -84,6 +84,25 @@
           });
         });
       }
+
+      ///////////////////////////////
+
+      let obecanje = new Promise((resolve, reject) => {
+        let uspeh = true;
+        if (uspeh) {
+          resolve("Uspeli smo jej. We did it jej! Jej we did it!");
+        } else {
+          reject("Tu bed gajz... bam bamm bammm!!!!!!!");
+        }
+      });
+
+      obecanje
+        .then((res) => {
+          console.log("res");
+        })
+        .catch((res) => {
+          console.log("res");
+        });
     </script>
   </body>
 </html>
