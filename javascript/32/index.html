@@ -50,6 +50,40 @@
         console.log("Hello!");
       }
       AfterDelay(message);
+
+      // 1.2.
+
+      function afterDelay() {
+        setTimeout(console.log("hello"), 3000);
+      }
+      afterDelay();
+      setTimeout(console.log("hello2"), 3000);
+
+      //       2. Callback to Promise Conversion
+
+      // Write a JavaScript program that converts a callback-based function to a Promise-based function.
+
+      function callbackBased(arg1, arg2, callback) {
+        setTimeout(() => {
+          let res = arg1 + arg2;
+          if (res % 2 !== 0) {
+            callback(null, res);
+          } else {
+            callback("new error,result is not odd!", res);
+          }
+        });
+      }
+      function promiseBased(arg1, arg2) {
+        return new Promise((resolve, reject) => {
+          callbackBased(arg1, arg2, (err, result) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(result);
+            }
+          });
+        });
+      }
     </script>
   </body>
 </html>
