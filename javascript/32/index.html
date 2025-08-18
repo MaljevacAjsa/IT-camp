@@ -103,6 +103,21 @@
         .catch((res) => {
           console.log("res");
         });
+
+      //         8. Repeated Execution with setInterval
+      // Write a JavaScript program to implement a function that executes a given function repeatedly at a fixed interval using 'setInterval()'.
+
+      const func = function () {
+        console.log("ajsa");
+      };
+
+      const intervalId = setInterval(func, 2000);
+
+      const stopFunc = function (id) {
+        clearInterval(id);
+      };
+
+      setTimeout(() => stopFunc(intervalId), 5000);
     </script>
   </body>
 </html>
