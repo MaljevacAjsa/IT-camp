@@ -31,9 +31,26 @@ function walkDog(result) {
   });
 }
 
+function cleanTheHouse(isClean) {
+  return new Promise((resolve, reject) => {
+    const isCleaned = isClean;
+    if (isCleaned) {
+      resolve("MashaAllah, you cleaned the house!");
+    } else {
+      reject("InshaAllah you will clean the house now!");
+    }
+  });
+}
+
 async function results() {
-  const walkDogResult = await walkDog(true);
-  console.log(walkDogResult);
+  try {
+    const walkDogResult = await walkDog(true);
+    console.log(walkDogResult);
+    const cleanTheHouseResult = await cleanTheHouse(false);
+    setTimeout(() => console.log(cleanTheHouseResult), 3000);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 results();
