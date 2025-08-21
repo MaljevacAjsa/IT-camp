@@ -29,4 +29,26 @@ async function delayedMessages() {
   console.log("Treca poruka");
 }
 
-delayedMessages();
+// delayedMessages();
+
+// 9. Dohvatanje komentara
+
+// Napiši async funkciju getComments(postId) koja:
+// dohvaća komentare za dati post sa https://jsonplaceholder.typicode.com/comments?postId={postId},
+// ispisuje u konzoli email svih korisnika koji su ostavili komentar.
+
+async function getComments(postId) {
+  try {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
+    );
+    const comments = await response.json();
+    comments.forEach((comment) => {
+      console.log(comment.email);
+    });
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+getComments(1);
