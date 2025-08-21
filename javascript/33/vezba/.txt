@@ -1,0 +1,57 @@
+8. Čekanje u lancu
+
+Napiši async funkciju delayedMessages koja:
+prvo čeka 1 sekundu i ispisuje "Prva poruka",
+zatim čeka još 2 sekunde i ispisuje "Druga poruka",
+zatim čeka još 3 sekunde i ispisuje "Treća poruka".
+👉 Testiraj i proveri da li se poruke ispisuju sa pravim pauzama.
+
+
+9. Dohvatanje komentara
+
+Napiši async funkciju getComments(postId) koja:
+dohvaća komentare za dati post sa https://jsonplaceholder.typicode.com/comments?postId={postId},
+ispisuje u konzoli email svih korisnika koji su ostavili komentar.
+
+
+10. Kombinovanje više API poziva
+Napravi async funkciju getUserWithTodos(userId) koja:
+dohvata korisnika sa https://jsonplaceholder.typicode.com/users/{userId},
+dohvata sve zadatke (todos) tog korisnika,
+vraća objekat u formatu:
+
+{
+  name: "Ime korisnika",
+  todosCount: broj_todos
+}
+
+
+11. Retry mehanizam
+
+Napravi async funkciju fetchWithRetry(url, retries) koja:
+pokušava da dohvati podatke sa zadatog url,
+ako fetch padne, ponavlja poziv do retries puta,
+ako i dalje ne uspe, baca grešku "Fetch nije uspeo".
+
+12. Paralelno preuzimanje više postova
+
+Napiši async funkciju getMultiplePosts(ids) koja prima niz ID-jeva postova, npr. [1, 2, 3],
+koristi Promise.all da paralelno dohvati sve postove,
+vraća niz postova.
+👉 Testiraj sa [1, 2, 3, 4, 5].
+
+
+13. Sekvencijalno ispisivanje korisnika
+
+Napravi async funkciju printUserNamesSequential(limit) koja:
+dohvata listu korisnika,
+za prvih limit korisnika (npr. 3), čeka po 1 sekundu pre ispisa svakog imena u konzoli.
+👉 Očekivano: ime prvog korisnika posle 1s, drugog posle 2s, trećeg posle 3s.
+
+
+14. Validacija pre fetch-a
+
+Napravi async funkciju getPostSafe(id) koja:
+ako id nije broj ili je manji od 1, odmah baca grešku "Neispravan ID",
+inače pokušava da dohvati post sa API-ja,
+vraća naslov posta.

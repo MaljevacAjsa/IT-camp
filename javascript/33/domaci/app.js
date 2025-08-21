@@ -83,6 +83,45 @@ getUserAndPosts(1);
 // getDataSlow() – vraća Promise koji se reši posle 3 sekunde,
 // getDataFast() – vraća Promise koji se reši posle 1 sekunde.
 
+function getDataSlow() {
+  return new Promise((resolve, reject) =>
+    setTimeout(() => resolve("Slow done"), 3000)
+  );
+}
+function getDataMid() {
+  return new Promise((resolve, rej) =>
+    setTimeout(() => resolve("Mid done"), 2000)
+  );
+}
+function getDataFast() {
+  return new Promise((resolve) => setTimeout(() => resolve("Fast done"), 1000));
+}
+
+async function testSequential() {
+  console.time("Sequential");
+  const slow = await getDataSlow();
+  console.log(slow);
+  const fast = await getDataFast();
+  console.log(fast);
+  console.timeEnd("Sequential");
+}
+
+async function testParallel() {
+  try {
+    console.time("Parallel");
+    const niz = await Promise.all([getDataSlow(), getDataFast(), getDataMid()]);
+    const [slow, fast, mid] = niz;
+    console.log(fast, mid, slow);
+    console.timeEnd("Parallel");
+  } catch (e) {
+    console.log(e);
+    console.timeEnd("Parallel");
+  }
+}
+
+//    testSequential();
+testParallel();
+
 //  6. Mini zadatak – vežba sa loop-om
 
 //     Napravi async funkciju printNumbers koja:
