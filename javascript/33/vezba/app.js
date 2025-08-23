@@ -28,7 +28,6 @@ async function delayedMessages() {
   await wait(3000);
   console.log("Treca poruka");
 }
-
 // delayedMessages();
 
 // 9. Dohvatanje komentara
@@ -50,5 +49,4 @@ async function getComments(postId) {
     console.log(e.message);
   }
 }
-
 getComments(1);
