@@ -26,7 +26,30 @@ async function getPosts() {
   }
 }
 
+function renderPost(post) {
+  const div = document.createElement("div");
+  div.style.border = "1px solid black";
+  div.style.borderRadius = "10px";
+  div.style.padding = "20px";
+
+  const h2 = document.createElement("h2");
+  h2.innerText = post.title;
+
+  const p = document.createElement("p");
+  p.innerText = post.body;
+
+  div.append(h2, p);
+
+  document.getElementById("main_container").append(div);
+}
+
 getPosts();
+
+function closeModal() {
+  overlay.style.display = "none";
+  document.getElementById("add_post").style.backgroundColor = "green";
+}
+
 let overlay, modalDiv;
 
 async function addInput() {
@@ -53,39 +76,36 @@ async function addInput() {
     button.style.backgroundColor = "darkGreen";
     overlay.style.display = "flex";
   });
-  buttonadd.addEventListener("click", () => {});
-  const modalTitle = document.getElementById("modalh2").value;
-  const modalText = document.getElementById("modalp").value;
-  const newObject = {
-    modalTitle: modalTitle,
-    modalText: modalText,
-  };
-  async function post(params) {
-    try {
-      await fetch(``, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newObject),
-      });
-    } catch (e) {
-      console.log(e.message);
+  buttonadd.addEventListener("click", () => {
+    const modalTitle = document.getElementById("modalh2").value;
+    const modalText = document.getElementById("modalp").value;
+    const newObject = {
+      title: modalTitle,
+      body: modalText,
+      userId: 1,
+    };
+    async function post() {
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newObject),
+        });
+        const data = await res.json();
+        renderPost(data);
+        closeModal();
+      } catch (e) {
+        console.log(e.message);
+      }
     }
-  }
+    post();
+  });
 }
 
 addInput();
-
-function closeModal() {
-  overlay.style.display = "none";
-  document.getElementById("add_post").style.backgroundColor = "green";
-}
 
 window.onclick = function (event) {
   if (event.target === overlay) {
     closeModal();
   }
 };
-
-// async function added(params) {}
-// const
-// (params) => {};
