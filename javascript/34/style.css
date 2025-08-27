@@ -89,3 +89,13 @@
   background-color: white;
   cursor: pointer;
 }
+
+.btn {
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  background-color: green;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
