@@ -50,15 +50,7 @@ function setupModal() {
   modalDiv = document.getElementById("modal");
 
   [addPostBtn, addBtn].forEach((btn, i) => {
-    btn.style.cssText = `
-      height: 40px;
-      width: ${i === 0 ? "100px" : "80px"};
-      border-radius: 5px;
-      background-color: green;
-      border: none;
-      color: white;
-      cursor: pointer;
-    `;
+    btn.classList.add("btn");
   });
 
   addPostBtn.addEventListener("click", () => {
