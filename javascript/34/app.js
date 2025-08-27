@@ -1,36 +1,10 @@
-async function getPosts() {
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const posts = await response.json();
-    posts.forEach((post) => {
-      console.log(post);
-      const div = document.createElement("div");
-      const h2 = document.createElement("h2");
-      const p = document.createElement("p");
-      p.innerText = post.body;
-      h2.innerText = post.title;
-      div.append(h2);
-      div.append(p);
-      div.style.border = "1px solid black";
-      div.style.borderRadius = "10px";
-      div.style.padding = "20px";
-      const main_container = document.getElementById("main_container");
-      main_container.style.display = "flex";
-      main_container.style.flexDirection = "column";
-      main_container.style.gap = "20px";
-      main_container.style.padding = "20px 10px";
-      main_container.append(div);
-    });
-  } catch (e) {
-    console.log(e.message);
-  }
-}
-
-function renderPost(post) {
+function createPostElement(post) {
   const div = document.createElement("div");
-  div.style.border = "1px solid black";
-  div.style.borderRadius = "10px";
-  div.style.padding = "20px";
+  div.style.cssText = `
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+  `;
 
   const h2 = document.createElement("h2");
   h2.innerText = post.title;
@@ -39,73 +13,84 @@ function renderPost(post) {
   p.innerText = post.body;
 
   div.append(h2, p);
-
-  document.getElementById("main_container").append(div);
+  return div;
 }
 
-getPosts();
+function renderPost(post) {
+  const mainContainer = document.getElementById("main_container");
+  mainContainer.append(createPostElement(post));
+}
+
+async function getPosts() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const posts = await response.json();
+    const mainContainer = document.getElementById("main_container");
+    mainContainer.style.cssText = `
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 10px;
+    `;
+    posts.forEach(renderPost);
+  } catch (e) {
+    console.log(e.message);
+  }
+}
 
 function closeModal() {
   overlay.style.display = "none";
   document.getElementById("add_post").style.backgroundColor = "green";
 }
 
-let overlay, modalDiv;
-
-async function addInput() {
-  const button = document.getElementById("add_post");
-  const buttonadd = document.getElementById("add");
-  const upper_div = document.getElementById("upper_div");
+function setupModal() {
+  const addPostBtn = document.getElementById("add_post");
+  const addBtn = document.getElementById("add");
   overlay = document.getElementById("overlay");
   modalDiv = document.getElementById("modal");
-  button.style.height = "40px";
-  button.style.width = "100px";
-  button.style.borderRadius = "5px";
-  button.style.backgroundColor = "green";
-  button.style.border = "none";
-  button.style.color = "white";
-  button.style.cursor = "pointer";
-  buttonadd.style.height = "40px";
-  buttonadd.style.width = "80px";
-  buttonadd.style.borderRadius = "5px";
-  buttonadd.style.backgroundColor = "green";
-  buttonadd.style.border = "none";
-  buttonadd.style.color = "white";
-  buttonadd.style.cursor = "pointer";
-  button.addEventListener("click", () => {
-    button.style.backgroundColor = "darkGreen";
+
+  [addPostBtn, addBtn].forEach((btn, i) => {
+    btn.style.cssText = `
+      height: 40px;
+      width: ${i === 0 ? "100px" : "80px"};
+      border-radius: 5px;
+      background-color: green;
+      border: none;
+      color: white;
+      cursor: pointer;
+    `;
+  });
+
+  addPostBtn.addEventListener("click", () => {
+    addPostBtn.style.backgroundColor = "darkGreen";
     overlay.style.display = "flex";
   });
-  buttonadd.addEventListener("click", () => {
+
+  addBtn.addEventListener("click", async () => {
     const modalTitle = document.getElementById("modalh2").value;
     const modalText = document.getElementById("modalp").value;
-    const newObject = {
-      title: modalTitle,
-      body: modalText,
-      userId: 1,
-    };
-    async function post() {
-      try {
-        const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newObject),
-        });
-        const data = await res.json();
-        renderPost(data);
-        closeModal();
-      } catch (e) {
-        console.log(e.message);
-      }
+    const newObject = { title: modalTitle, body: modalText, userId: 1 };
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newObject),
+      });
+      const data = await res.json();
+      renderPost(data);
+      closeModal();
+    } catch (e) {
+      console.log(e.message);
     }
-    post();
   });
 }
-
-addInput();
 
 window.onclick = function (event) {
   if (event.target === overlay) {
     closeModal();
   }
 };
+
+let overlay, modalDiv;
+getPosts();
+setupModal();
