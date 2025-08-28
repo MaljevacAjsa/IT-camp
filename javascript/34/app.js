@@ -20,7 +20,9 @@ async function getPosts() {
     const posts = await response.json();
     const mainContainer = document.getElementById("main_container");
     mainContainer.classList.add("main-container");
-    posts.forEach(renderPost);
+    posts.forEach((post) => {
+      post = renderPost(post) + `heart Dodaj u favorite`;
+    });
   } catch (e) {
     console.log(e.message);
   }
