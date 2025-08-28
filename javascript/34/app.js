@@ -1,17 +1,10 @@
 function createPostElement(post) {
   const div = document.createElement("div");
-  div.style.cssText = `
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
-  `;
-
+  div.classList.add("div");
   const h2 = document.createElement("h2");
   h2.innerText = post.title;
-
   const p = document.createElement("p");
   p.innerText = post.body;
-
   div.append(h2, p);
   return div;
 }
@@ -26,12 +19,7 @@ async function getPosts() {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     const posts = await response.json();
     const mainContainer = document.getElementById("main_container");
-    mainContainer.style.cssText = `
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 20px 10px;
-    `;
+    mainContainer.classList.add("main-container");
     posts.forEach(renderPost);
   } catch (e) {
     console.log(e.message);
@@ -48,16 +36,13 @@ function setupModal() {
   const addBtn = document.getElementById("add");
   overlay = document.getElementById("overlay");
   modalDiv = document.getElementById("modal");
-
   [addPostBtn, addBtn].forEach((btn, i) => {
     btn.classList.add("btn");
   });
-
   addPostBtn.addEventListener("click", () => {
     addPostBtn.style.backgroundColor = "darkGreen";
     overlay.style.display = "flex";
   });
-
   addBtn.addEventListener("click", async () => {
     const modalTitle = document.getElementById("modalh2").value;
     const modalText = document.getElementById("modalp").value;
