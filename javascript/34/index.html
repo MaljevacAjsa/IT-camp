@@ -11,29 +11,31 @@
     ></script>
   </head>
   <body>
-    <div id="upper_div">
-      <h1 id="title">Lista Postova</h1>
-      <div id="upper_div2">
-        <button id="favoritesButton">Prikazi samo favorite</button>
-        <button id="add_post">Add Post</button>
+    <body>
+      <div id="upper_div">
+        <h1 id="title">Lista Postova</h1>
+        <div class="show-div">
+          <button class="btn-fav" id="show_favorites">Show Favorites</button>
+          <button class="btn" id="show_all">Show All</button>
+          <button id="add_post">Add Post</button>
+        </div>
       </div>
-    </div>
 
-    <div id="main_container"></div>
+      <div id="posts"></div>
 
-    <div id="overlay" style="display: none">
-      <div id="modal">
-        <button onclick="closeModal()" id="closeBtn">
-          <i class="fa-solid fa-square-xmark"></i>
-        </button>
+      <div id="overlay" style="display: none">
+        <div id="modal">
+          <button onclick="closeModal()" id="closeBtn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </button>
 
-        <input id="modalh2" placeholder="Title" type="text" />
-        <input id="modalp" placeholder="Text" type="text" />
-        <button id="add">Add</button>
+          <input id="modalh2" placeholder="Title" type="text" />
+          <input id="modalp" placeholder="Text" type="text" />
+          <button id="add">Add</button>
+        </div>
       </div>
-    </div>
 
-    <div id="main_container"></div>
-    <script src="app.js"></script>
+      <script src="app.js"></script>
+    </body>
   </body>
 </html>
