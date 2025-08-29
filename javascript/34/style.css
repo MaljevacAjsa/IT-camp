@@ -54,16 +54,6 @@
   align-items: center;
 }
 
-#favoritesButton {
-  background-color: darkGreen;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  height: 40px;
-  width: 160px;
-}
-
 #upper_div2 {
   display: flex;
   flex-direction: row;
@@ -72,29 +62,21 @@
   width: 270px;
 }
 
-.favorite {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  width: 145px;
-  cursor: pointer;
-  border: none;
-  background-color: white;
-}
-
-.favoriteHeart {
-  border: none;
-  background-color: white;
-  cursor: pointer;
-}
-
 .btn {
   height: 40px;
-  width: 100px;
+  width: 110px;
   border-radius: 5px;
   background-color: green;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-fav {
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  background-color: rgb(147, 35, 35);
   border: none;
   color: white;
   cursor: pointer;
@@ -104,6 +86,16 @@
   border: 1px solid black;
   border-radius: 10px;
   padding: 20px;
+  margin-bottom: 20px;
+}
+
+.show-div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 380px;
+  align-items: center;
+  margin: 20px;
 }
 
 .main-container {
@@ -111,4 +103,17 @@
   flex-direction: column;
   gap: 20px;
   padding: 20px 10px;
+}
+
+.favorite {
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.favoriteHeart {
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
 }
