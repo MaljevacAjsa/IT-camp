@@ -134,3 +134,41 @@
 
 // 20. Find Duplicate Values
 // Write a JavaScript program to find duplicate values in a JavaScript array.
+
+// function findDuplicates(array) {
+//   const duplicates = [];
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = 1; j < i - 1; j++) {
+//       if (array[j] === array[i]) {
+//         duplicates.push(array[i]);
+//       }
+//     }
+//   }
+//   return duplicates;
+// }
+// console.log(findDuplicates([1, 2, 3, 4, 2, 3]));
+
+// 21. Flatten Nested Array
+// Write a JavaScript program to flatten a nested (any depth) array.
+// If you pass shallow, the array will only be flattened to a single level.
+
+// function flatten(array, shallow = false) {
+//   if (shallow) {
+//     // Flatten only one level
+//     return array.reduce((acc, val) => acc.concat(val), []);
+//   } else {
+//     // Flatten recursively (any depth)
+//     return array.reduce(
+//       (acc, val) =>
+//         Array.isArray(val) ? acc.concat(flatten(val)) : acc.concat(val),
+//       []
+//     );
+//   }
+// }
+
+// console.log(flatten([1, 2, [2, 4], [[4]], [[2, 3, 4]]])); // Full flatten tj deep flatten
+// console.log(flatten([1, 2, [2, 4], [[4]], [[2, 3, 4]]], true)); // Shallow flatten
+
+// const arr = [5, 9, [9, 0], [[6]], [[2, 7, 4]]];
+// console.log(arr.flat(Infinity));
+// console.log(arr.flat());
